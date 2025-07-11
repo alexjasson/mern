@@ -10,7 +10,12 @@ npm install
 
 2. Setup .env file:
 ```bash
-mkdir -p config
-echo "PORT=3000" > config/.env
-echo "HOST=localhost" >> config/.env
+echo "NODE_ENV=development" > .env
+echo "PORT=3000" >> .env
+echo "HOST=localhost" >> .env
+```
+
+3. Start the app:
+```bash
+npm run start
 ```

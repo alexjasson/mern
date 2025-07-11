@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-dotenv.config({ override: true, path: './config/.env' });
+dotenv.config({ override: true, path: '../.env', quiet: true });
 if (!process.env.PORT || !process.env.HOST) {
     throw new Error("PORT or HOST environment variables are not defined.");
 }
