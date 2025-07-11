@@ -1,0 +1,25 @@
+{
+  "name": "pern",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A basic PERN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexjasson/pern.git"
+  },
+  "author": "Alex Jasson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexjasson/pern/issues"
+  },
+  "homepage": "https://github.com/alexjasson/pern#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0"
+  }
+}
