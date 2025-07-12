@@ -1,27 +1,8 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import db from './Database.js';
+import server from './Server.js';
 
-dotenv.config({ override: true, path: '../.env', quiet: true });
-if (!process.env.PORT || !process.env.HOST) {
-    throw new Error("PORT or HOST environment variables are not defined.");
-}
+// Initialize database connection
+await db.connect();
 
-const PORT = process.env.PORT;
-const HOST = process.env.HOST;
-const app = express();
-
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Test route
-app.get('/api', (req, res) => {
-    res.json({ message: "Server is working!" });
-});
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running at http://${HOST}:${PORT}`);
-});
+// Start the server
+await server.start();

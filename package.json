@@ -10,6 +10,7 @@
   "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\""
 },
   "devDependencies": {
+    "dotenv": "^17.2.0",
     "concurrently": "^8.2.2"
   }
 }
