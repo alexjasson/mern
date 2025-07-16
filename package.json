@@ -1,9 +1,9 @@
 {
-  "name": "pern",
+  "name": "mern",
   "version": "1.0.0",
   "private": true,
   "workspaces": ["backend", "frontend"],
-  "description": "A basic PERN stack",
+  "description": "A basic MERN stack",
   "author": "Alex Jasson",
   "license": "MIT",
 "scripts": {

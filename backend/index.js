@@ -1,5 +1,5 @@
-import db from './Database.js';
-import server from './Server.js';
+import db from './Database/Database.js';
+import server from './Server/Server.js';
 
 // Initialize database connection
 await db.connect();

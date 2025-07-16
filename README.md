@@ -1,28 +1,27 @@
-# pern
-A basic PERN stack
+# mern
+A basic MERN stack
 
 ## Prerequisites
 
 - Node.js
-- PostgreSQL
+- MongoDB
 
 ## Setup
 
-1. Create a postgreSQL database:
+1. Start MongoDB:
 ```bash
-createdb -h localhost -p 5432 -U postgres your_db_name_here
+sudo systemctl start mongod
 ```
 
 2. Go to the root directory:
 ```bash
-cd pern
+cd mern
 ```
 
 3. Install dependencies:
 ```bash
 npm install
 ```
-
 
 4. Setup .env file:
 ```bash
@@ -32,10 +31,10 @@ echo "SERVER_PORT=3000" >> .env
 echo "CLIENT_HOST=localhost" >> .env
 echo "CLIENT_PORT=5173" >> .env
 echo "DATABASE_HOST=localhost" >> .env
-echo "DATABASE_PORT=5432" >> .env
-echo "DATABASE_USER=postgres" >> .env
-echo "DATABASE_PASSWORD=your_password_here" >> .env
-echo "DATABASE_NAME=your_db_name_here" >> .env
+echo "DATABASE_PORT=27017" >> .env
+echo "DATABASE_USER=admin" >> .env
+echo "DATABASE_PASSWORD=" >> .env
+echo "DATABASE_NAME=mern" >> .env
 ```
 
 5. Start the app:
