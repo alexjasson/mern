@@ -15,10 +15,16 @@ export default defineConfig({
           }
           const host = process.env.CLIENT_HOST;
           const port = process.env.CLIENT_PORT;
-          console.log(`Client running at: http://${host}:${port}`);
         });
       },
     },
   ],
-  logLevel: 'error',
+  server: {
+    proxy: {
+      '/api': {
+        target: `http://${process.env.SERVER_HOST}:${process.env.SERVER_PORT}`,
+        changeOrigin: true,
+      },
+    },
+  },
 })

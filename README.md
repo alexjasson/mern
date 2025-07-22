@@ -18,12 +18,7 @@ sudo systemctl start mongod
 cd mern
 ```
 
-3. Install dependencies:
-```bash
-npm install
-```
-
-4. Setup .env file:
+3. Setup .env file:
 ```bash
 echo "NODE_ENV=development" > .env
 echo "SERVER_HOST=localhost" >> .env
@@ -35,9 +30,36 @@ echo "DATABASE_PORT=27017" >> .env
 echo "DATABASE_USER=admin" >> .env
 echo "DATABASE_PASSWORD=" >> .env
 echo "DATABASE_NAME=mern" >> .env
+echo "JWT_SECRET=secret-key" >> .env
+```
+
+4. Install dependencies:
+```bash
+npm install
 ```
 
 5. Start the app:
 ```bash
 npm run start
+```
+
+## Build
+
+To build the frontend for production:
+```bash
+cd frontend
+npm run build
+```
+
+To preview the production build locally:
+```bash
+cd frontend
+npm run preview
+```
+
+## Database
+To clear the database of all data:
+```bash
+cd backend
+npm run reset
 ```

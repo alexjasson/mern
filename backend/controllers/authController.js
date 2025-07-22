@@ -1,18 +1,19 @@
 import bcryptjs from "bcryptjs";
-import { User } from "../models/user.model.js";
+import { User } from "../models/userModel.js";
 import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie.js";
 
 export const signup = async (req, res) => {
-	const { email, password, name } = req.body;
+	const { email, password, username } = req.body;
 
 	try {
-		if (!email || !password || !name) {
-			throw new Error("All fields are required");
+		const usernameAlreadyExists = await User.findOne({ username });
+		if (usernameAlreadyExists) {
+			return res.status(400).json({ success: false, message: "Username already exists" });
 		}
 
-		const userAlreadyExists = await User.findOne({ email });
-		if (userAlreadyExists) {
-			return res.status(400).json({ success: false, message: "User already exists" });
+		const emailAlreadyExists = await User.findOne({ email });
+		if (emailAlreadyExists) {
+			return res.status(400).json({ success: false, message: "Email already exists" });
 		}
 
 		const hashedPassword = await bcryptjs.hash(password, 10);
@@ -21,7 +22,7 @@ export const signup = async (req, res) => {
 		const user = new User({
 			email,
 			password: hashedPassword,
-			name,
+			username,
 			verificationToken,
 			verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000, // 24 hours
 		});
@@ -29,8 +30,6 @@ export const signup = async (req, res) => {
 		await user.save();
 
 		generateTokenAndSetCookie(res, user._id);
-
-		await sendVerificationEmail(user.email, verificationToken);
 
 		res.status(201).json({
 			success: true,
@@ -79,4 +78,18 @@ export const login = async (req, res) => {
 export const logout = async (req, res) => {
 	res.clearCookie("token");
 	res.status(200).json({ success: true, message: "Logged out successfully" });
+};
+
+export const checkAuth = async (req, res) => {
+	try {
+		const user = await User.findById(req.userId).select("-password");
+		if (!user) {
+			return res.status(400).json({ success: false, message: "User not found" });
+		}
+
+		res.status(200).json({ success: true, user });
+	} catch (error) {
+		console.log("Error in checkAuth ", error);
+		res.status(400).json({ success: false, message: error.message });
+	}
 };

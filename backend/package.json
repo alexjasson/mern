@@ -6,7 +6,8 @@
   "author": "Alex Jasson",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js",
+    "reset": "node db/resetDb.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -15,5 +16,8 @@
     "cookie-parser": "^1.4.6",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }

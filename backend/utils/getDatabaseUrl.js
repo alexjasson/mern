@@ -1,6 +1,4 @@
-import dotenv from 'dotenv';
-
-dotenv.config({ override: true, path: '../../.env', quiet: true });
+import mongoose from "mongoose";
 
 export const getDatabaseUrl = () => {
       const {
