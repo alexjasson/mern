@@ -1,16 +1,26 @@
 {
   "name": "mern",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
-  "workspaces": ["backend", "frontend"],
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "description": "A basic MERN stack",
   "author": "Alex Jasson",
   "license": "MIT",
-"scripts": {
-  "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\""
-},
+  "scripts": {
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\"",
+    "lint": "eslint ."
+  },
   "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "concurrently": "^8.2.2",
     "dotenv": "^17.2.0",
-    "concurrently": "^8.2.2"
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20"
   }
 }

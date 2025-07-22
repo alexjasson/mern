@@ -43,20 +43,6 @@ npm install
 npm run start
 ```
 
-## Build
-
-To build the frontend for production:
-```bash
-cd frontend
-npm run build
-```
-
-To preview the production build locally:
-```bash
-cd frontend
-npm run preview
-```
-
 ## Database
 To clear the database of all data:
 ```bash
