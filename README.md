@@ -1,8 +1,6 @@
 # mern
 This is an example MERN full stack application with basic authentication features such as secure login/logout, password resets and email verification. Feel free to use it as boilerplate code for your own projects.
 
-## Screenshot
-
 ![MERN App](./assets/screenshot.png)
 
 ## Prerequisites
