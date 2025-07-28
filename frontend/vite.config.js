@@ -13,8 +13,6 @@ export default defineConfig({
           if (!process.env.CLIENT_HOST || !process.env.CLIENT_PORT) {
             throw new Error('CLIENT_HOST and CLIENT_PORT environment variables must be defined');
           }
-          const host = process.env.CLIENT_HOST;
-          const port = process.env.CLIENT_PORT;
         });
       },
     },

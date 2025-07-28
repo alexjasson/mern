@@ -1,5 +1,9 @@
 # mern
-A basic MERN stack
+This is an example MERN full stack application with basic authentication features such as secure login/logout, password resets and email verification. Feel free to use it as boilerplate code for your own projects.
+
+## Screenshot
+
+![MERN App](./assets/screenshot.png)
 
 ## Prerequisites
 
@@ -8,17 +12,12 @@ A basic MERN stack
 
 ## Setup
 
-1. Start MongoDB:
-```bash
-sudo systemctl start mongod
-```
-
-2. Go to the root directory:
+1. Go to the root directory:
 ```bash
 cd mern
 ```
 
-3. Setup .env file:
+2. Setup .env file:
 ```bash
 echo "NODE_ENV=development" > .env
 echo "SERVER_HOST=localhost" >> .env
@@ -33,12 +32,12 @@ echo "DATABASE_NAME=mern" >> .env
 echo "JWT_SECRET=secret-key" >> .env
 ```
 
-4. Install dependencies:
+3. Install dependencies:
 ```bash
 npm install
 ```
 
-5. Start the app:
+4. Start the app:
 ```bash
 npm run start
 ```

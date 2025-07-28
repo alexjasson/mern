@@ -11,7 +11,7 @@
   "author": "Alex Jasson",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\"",
+    "start": "concurrently --raw --kill-others \"cd backend && npm start\" \"cd frontend && npm run dev\"",
     "lint": "eslint ."
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "eslint": "^9.31.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20"
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "validator": "^13.9.0"
   }
 }

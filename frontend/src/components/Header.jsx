@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 
 const Header = () => {
-	const { user, logout, isAuthenticated } = useAuthStore();
+	const { logout, isAuthenticated } = useAuthStore();
 
 	const handleLogout = () => {
 		logout();
@@ -14,6 +14,7 @@ const Header = () => {
 				<div className="flex justify-between items-center py-2">
 					{/* Logo/Brand */}
 					<Link to="/" className="flex items-center space-x-3">
+						<img src="/MERN.png" alt="MERN" className="h-8 w-8" />
 						<div className="text-4xl font-semibold text-black">
 							mern
 						</div>

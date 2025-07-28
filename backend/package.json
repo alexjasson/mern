@@ -15,7 +15,9 @@
     "mongoose": "^7.4.0",
     "cookie-parser": "^1.4.6",
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "nodemailer": "^6.9.15",
+    "ora": "^6.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
